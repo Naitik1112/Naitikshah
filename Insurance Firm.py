@@ -22,6 +22,17 @@ global color
 
 color = "#f2debf"   
 drop2  = None
+
+if not os.path.exists("C:\\Users\\NAITIK SHAH\\OneDrive\\Desktop\\Data Entry\\" ) :
+            
+
+
+    path = "C:\\Users\\NAITIK SHAH\\OneDrive\\Desktop\\"
+    os.chdir(path)
+    Newfolder =  "Data Entry"
+    os.makedirs(Newfolder)
+
+
 class SlidePanel(ctk.CTkFrame):
      
 	def __init__(self, parent, start_pos, end_pos):
