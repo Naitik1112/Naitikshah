@@ -593,11 +593,11 @@ def Home():
                 
                 my_tree.insert("" , "end" , values  = rows )
                 
-        B1.configure(fg_color  = "red") 
-        B2.configure(fg_color = color_treeview)
-        B3.configure(fg_color = color_treeview)
-        B4.configure(fg_color = color_treeview)
-        B5.configure(fg_color = color_treeview)      
+        B1.configure(fg_color  = "red" , , border_color = "red" , border_width=0) 
+        B2.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B3.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B4.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)      
         
     def Show_TreeView_KOTAK():
         
@@ -630,11 +630,11 @@ def Home():
                 
                 my_tree.insert("" , "end" , values  = rows )
                 
-        B1.configure(fg_color  = color_treeview) 
-        B2.configure(fg_color = "red")
-        B3.configure(fg_color = color_treeview)
-        B4.configure(fg_color = color_treeview)
-        B5.configure(fg_color = color_treeview) 
+        B1.configure(fg_color  = color_treeview, border_color = "Maroon" , border_width=2) 
+        B2.configure(fg_color = "red", border_color = "red" , border_width=0)
+        B3.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B4.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2) 
     
     def Show_TreeView_NJ():
         
@@ -668,11 +668,11 @@ def Home():
                 my_tree.insert("" , "end" , values  = rows )
                 
                 
-        B1.configure(fg_color  = color_treeview) 
-        B2.configure(fg_color = color_treeview)
-        B3.configure(fg_color = "red")
-        B4.configure(fg_color = color_treeview)
-        B5.configure(fg_color = color_treeview)        
+        B1.configure(fg_color  = color_treeview, border_color = "Maroon" , border_width=2) 
+        B2.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B3.configure(fg_color = "red", border_color = "red" , border_width=2)
+        B4.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)        
                 
                             
     def Show_TreeView_LIC():
@@ -706,11 +706,11 @@ def Home():
                 
                 my_tree.insert("" , "end" , values  = rows )       
 
-        B1.configure(fg_color  = color_treeview) 
-        B2.configure(fg_color = color_treeview)
-        B3.configure(fg_color = color_treeview)
-        B4.configure(fg_color = "red")
-        B5.configure(fg_color = color_treeview) 
+        B1.configure(fg_color  = color_treeview, border_color = "Maroon" , border_width=2) 
+        B2.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B3.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
+        B4.configure(fg_color = "red", border_color = "red" , border_width=2)
+        B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2) 
     
     def Show_TreeView_ALL_COMPANIES():
         
@@ -746,11 +746,11 @@ def Home():
         
         color_treeview = "#df4c4c"
         
-        B1.configure(fg_color  = color_treeview ) 
-        B2.configure(fg_color =  color_treeview )
-        B3.configure(fg_color = color_treeview )
-        B4.configure(fg_color = color_treeview )
-        B5.configure(fg_color = "red")   
+        B1.configure(fg_color  = color_treeview , border_color = "Maroon" , border_width=2 ) 
+        B2.configure(fg_color =  color_treeview , border_color = "Maroon" , border_width=2 )
+        B3.configure(fg_color = color_treeview , border_color = "Maroon" , border_width=2 )
+        B4.configure(fg_color = color_treeview , border_color = "Maroon" , border_width=2 )
+        B5.configure(fg_color = "red" , border_color = "red" , border_width=2 )   
    
     
     L = ctk.CTkLabel(frame1 , text = "Welcome to Ascent Investment and Finicial Services !" , font=my_font0 )
