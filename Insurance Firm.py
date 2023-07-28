@@ -593,7 +593,7 @@ def Home():
                 
                 my_tree.insert("" , "end" , values  = rows )
                 
-        B1.configure(fg_color  = "red" , , border_color = "red" , border_width=0) 
+        B1.configure(fg_color  = "red" ,  border_color = "red" , border_width=0) 
         B2.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B3.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B4.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
