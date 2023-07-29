@@ -1,8 +1,7 @@
 import customtkinter as ctk 
 import tkinter as tk
-import tkinter as ttk
 from tkinter import *
-from PIL import Image , ImageTk
+from PIL import Image 
 from tkinter import filedialog
 from PIL.Image import open as open_image
 import customtkinter as c
@@ -24,14 +23,11 @@ color = "#f2debf"
 drop2  = None
 
 if not os.path.exists("C:\\Users\\NAITIK SHAH\\OneDrive\\Desktop\\Data Entry\\" ) :
-            
-
-
+    
     path = "C:\\Users\\NAITIK SHAH\\OneDrive\\Desktop\\"
     os.chdir(path)
     Newfolder =  "Data Entry"
     os.makedirs(Newfolder)
-
 
 class SlidePanel(ctk.CTkFrame):
      
@@ -581,39 +577,39 @@ def Home():
         my_tree.delete(*my_tree.get_children())
         
     
-        
+        count  = 0 
         
 
         Paths  = categorized_files["TATA"]
 
     
-        Headings  = ["Name" ,"Company" , "Plan" , "Policy"]
-
-        my_tree["column"] = Headings
+ 
         my_tree["show"]   = "headings"
 
-        for col in my_tree ["column"]:
-            my_tree.heading(col,text = col)
-            
             
         for Path in Paths  :
             df  =  pd.read_csv(Path).iloc[:, :4]   
 
             df_rows = df.to_numpy().tolist()
             for rows in df_rows:
-                
-                my_tree.insert("" , "end" , values  = rows )
-                
-        B1.configure(fg_color  = "red" ,  border_color = "red" , border_width=0) 
+                if count % 2 == 0 :
+                    my_tree.insert("" , "end" , values  = rows , tags  = "evenrow" )  
+                else:
+                    my_tree.insert("" , "end" , values  = rows , tags  = "oddrow" )  
+            
+                count+=1
+        B1.configure(fg_color  = "red", border_color = "red" , border_width=2) 
         B2.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B3.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B4.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
-        B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)      
+        B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)  
+
+            
         
     def Show_TreeView_KOTAK():
         
         
-        
+        count  = 0 
         
         my_tree.delete(*my_tree.get_children())
         
@@ -624,13 +620,8 @@ def Home():
         Paths  = categorized_files["KOTAK"]
 
     
-        Headings  = ["Name" ,"Company" , "Plan" , "Policy"]
-
-        my_tree["column"] = Headings
         my_tree["show"]   = "headings"
 
-        for col in my_tree ["column"]:
-            my_tree.heading(col,text = col)
             
             
         for Path in Paths  :
@@ -639,18 +630,26 @@ def Home():
             df_rows = df.to_numpy().tolist()
             for rows in df_rows:
                 
-                my_tree.insert("" , "end" , values  = rows )
+                
+                if count % 2 == 0 :
+                    my_tree.insert("" , "end" , values  = rows , tags  = "evenrow" )  
+                else:
+                    my_tree.insert("" , "end" , values  = rows , tags  = "oddrow" )  
+            
+                count+=1
                 
         B1.configure(fg_color  = color_treeview, border_color = "Maroon" , border_width=2) 
-        B2.configure(fg_color = "red", border_color = "red" , border_width=0)
+        B2.configure(fg_color = "red", border_color = "red" , border_width=2)
         B3.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B4.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2) 
     
+        
+    
     def Show_TreeView_NJ():
         
         
-        
+        count  = 0 
         
         my_tree.delete(*my_tree.get_children())
         
@@ -661,13 +660,8 @@ def Home():
         Paths  = categorized_files["NJ"]
 
     
-        Headings  = ["Name" ,"Company" , "Plan" , "Policy"]
-
-        my_tree["column"] = Headings
         my_tree["show"]   = "headings"
 
-        for col in my_tree ["column"]:
-            my_tree.heading(col,text = col)
             
             
         for Path in Paths  :
@@ -675,20 +669,25 @@ def Home():
 
             df_rows = df.to_numpy().tolist()
             for rows in df_rows:
-                
-                my_tree.insert("" , "end" , values  = rows )
-                
+                if count % 2 == 0 :
+                    my_tree.insert("" , "end" , values  = rows , tags  = "evenrow" )  
+                else:
+                    my_tree.insert("" , "end" , values  = rows , tags  = "oddrow" )  
+            
+                count+=1
                 
         B1.configure(fg_color  = color_treeview, border_color = "Maroon" , border_width=2) 
         B2.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B3.configure(fg_color = "red", border_color = "red" , border_width=2)
         B4.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)        
-                
+         
+    
+          
                             
     def Show_TreeView_LIC():
         
-        
+        count  = 0 
         
         
         my_tree.delete(*my_tree.get_children())
@@ -700,13 +699,9 @@ def Home():
         Paths  = categorized_files["LIC"]
 
     
-        Headings  = ["Name" ,"Company" , "Plan" , "Policy"]
-
-        my_tree["column"] = Headings
+      
         my_tree["show"]   = "headings"
 
-        for col in my_tree ["column"]:
-            my_tree.heading(col,text = col)
             
             
         for Path in Paths  :
@@ -714,19 +709,25 @@ def Home():
 
             df_rows = df.to_numpy().tolist()
             for rows in df_rows:
+                if (count % 2 == 0 ):
+                    my_tree.insert("" , "end" , values  = rows  , tags  = "evenrow")   
+                else:
+                    my_tree.insert("" , "end" , values  = rows  , tags  = "oddrow")   
+                count+=1
                 
-                my_tree.insert("" , "end" , values  = rows )       
-
         B1.configure(fg_color  = color_treeview, border_color = "Maroon" , border_width=2) 
         B2.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B3.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2)
         B4.configure(fg_color = "red", border_color = "red" , border_width=2)
         B5.configure(fg_color = color_treeview, border_color = "Maroon" , border_width=2) 
+
+   
     
     def Show_TreeView_ALL_COMPANIES():
         
         global color_treeview
         
+        count  = 0 
         
         my_tree.delete(*my_tree.get_children())
         
@@ -738,13 +739,9 @@ def Home():
         Paths  = sorted_csv_files
 
     
-        Headings  = ["Name" ,"Company" , "Plan" , "Policy"]
 
-        my_tree["column"] = Headings
         my_tree["show"]   = "headings"
 
-        for col in my_tree ["column"]:
-            my_tree.heading(col,text = col)
             
             
         for Path in Paths  :
@@ -752,48 +749,84 @@ def Home():
 
             df_rows = df.to_numpy().tolist()
             for rows in df_rows:
-                
-                my_tree.insert("" , "end" , values  = rows )  
-        
+                if count % 2 == 0 :
+                    my_tree.insert("" , "end" , values  = rows , tags  = "evenrow" )  
+                else:
+                    my_tree.insert("" , "end" , values  = rows , tags  = "oddrow" )  
+            
+                count+=1
+            
         color_treeview = "#df4c4c"
         
-        B1.configure(fg_color  = color_treeview , border_color = "Maroon" , border_width=2 ) 
-        B2.configure(fg_color =  color_treeview , border_color = "Maroon" , border_width=2 )
-        B3.configure(fg_color = color_treeview , border_color = "Maroon" , border_width=2 )
-        B4.configure(fg_color = color_treeview , border_color = "Maroon" , border_width=2 )
-        B5.configure(fg_color = "red" , border_color = "red" , border_width=2 )   
+        B1.configure(fg_color  = color_treeview , border_color = "Maroon" , border_width=2) 
+        B2.configure(fg_color =  color_treeview , border_color = "Maroon" , border_width=2)
+        B3.configure(fg_color = color_treeview , border_color = "Maroon" , border_width=2)
+        B4.configure(fg_color = color_treeview , border_color = "Maroon" , border_width=2)
+        B5.configure(fg_color = "red", border_color = "red" , border_width=2) 
+        
+       
    
     
     L = ctk.CTkLabel(frame1 , text = "Welcome to Ascent Investment and Finicial Services !" , font=my_font0 )
-    L.pack(pady  = 50)
+    L.pack(pady  = 40)
     
     
     f = ctk.CTkFrame(frame1 , bg_color= "papayawhip"  , fg_color="papayawhip")
-    f.pack(pady  =40)
+    f.pack(pady  =25)
     
     from tkinter import ttk
     import numpy 
     import pandas as pd 
     
 
+    Frame_Net = ctk.CTkFrame(frame1  , fg_color="papayawhip"  )
+    Frame_Net.pack()
     
-    tree_Frame1 = ctk.CTkFrame(frame1 , border_color="red" , width  = 300 , border_width=6 , bg_color="papayawhip" , fg_color="#f7e7ce" )
-    tree_Frame1.pack()
+    tree_Frame1 = ctk.CTkFrame( Frame_Net, border_color="red" , width  = 300 , border_width=6 , bg_color="papayawhip" , fg_color="#f7e7ce" )
+    tree_Frame1.pack(side  = "top")
 
+    B_Frame  = ctk.CTkFrame( Frame_Net  , fg_color="papayawhip"  )
+    B_Frame.pack(side  = "bottom" , fill = X)
+    
+    
+    tree_Frame  = ctk.CTkFrame(tree_Frame1 , width  = 270  , bg_color="papayawhip"  , fg_color="#f7e1bf" )
+    tree_Frame.pack(padx  = 20 , pady  = 20 , side = "left")
 
-    tree_Frame  = ctk.CTkFrame(tree_Frame1 , width  = 300  , bg_color="papayawhip" )
-    tree_Frame.pack(padx  = 20 , pady  = 20)
-
-
+    
+    
+    
+    
+    
+    
     tree_Scroll = Scrollbar(tree_Frame  )
-    tree_Scroll.pack(side = "right" , fill = Y )
+    tree_Scroll.pack(side = "right" , fill = Y , ipadx = 3 )
 
 
-    my_tree = ttk.Treeview(tree_Frame  , yscrollcommand=tree_Scroll.set  , selectmode= "browse" , show  = "tree headings")
+    my_tree = ttk.Treeview(tree_Frame  , yscrollcommand=tree_Scroll.set , cursor="hand2" , selectmode= "browse" , show  = "tree headings")
     my_tree.pack( )
 
     my_tree.heading("#0" , text = "\n"    )
+    
+    W = 180 +40
+    A  = "center"
+    
+    my_tree["columns"] =  ("Name" , "Company" , "Plan" ,"Policy")
+    
+    my_tree.column("#0" , width  = 0 , stretch = YES)
+    my_tree.column("Name",width  = W , anchor= A  )
+    my_tree.column("Company",width  = W , anchor= A  )
+    my_tree.column("Plan",width  = W , anchor= A  )
+    my_tree.column("Policy",width  = W , anchor= A  )
+    
+    my_tree.heading("Name" , text  = "Name" , anchor  = A)
+    my_tree.heading("Company" , text  = "Company" , anchor  = A)
+    my_tree.heading("Plan" , text  = "Plan" , anchor  = A)
+    my_tree.heading("Policy" , text  = "Policy" , anchor  = A)
 
+    
+    #Dark Color = #ccb99b 
+    my_tree.tag_configure("evenrow" , background= "#f7e1bf")
+    my_tree.tag_configure("oddrow" , background= "#f7e7ce"  )
 
     style = ttk.Style()
     style.theme_use("default")
@@ -803,7 +836,7 @@ def Home():
                     foreground="black",
                     rowheight=50-20+5,
                     font=("Bold", 15) ,
-                    fieldbackground  = "#f7e1bf",
+                    fieldbackground  ="#f7e7ce"  ,
                     bordercolor  = "red"  ,borderwidth  = 1 )      # Set your desired foreground color here
 
     # Configure Treeview.Heading style (increase the font size)
@@ -844,6 +877,7 @@ def Home():
     B5.pack(side  = "left" , padx  = 6)
     
     Show_TreeView_ALL_COMPANIES()
+    
     
 
 def setup_entry_widget(placeholder, limit, entry_widget):
